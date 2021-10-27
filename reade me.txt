@@ -1,0 +1,7 @@
+flutter create learning_flutter //to create new project
+//required plugin for flutter in vs
+//flutter
+//dart
+//flutter Snippets, bracket pair colorizer, material icon theme
+//to run app (connet emulator or device the debug the code)
+//to debug go to debug tab in (vs code)

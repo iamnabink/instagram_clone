@@ -6,11 +6,17 @@ jobs:
     docker:
       - image: cirrusci/flutter
     steps:
-      - checkout 
+      - checkout
       - run: flutter doctor
-#       - run: flutter test
+          #       - run: flutter test
+      - run:
+          name: Install Flutter SDK Manager
+          command: npm install -g fvm
+      - run:
+          name: Install Flutter SDK
+          command: fvm stable && fvm 1.22.5
       - run: flutter packages get
-#       - run: flutter pub run build_runner build --delete-conflicting-outputs
-      - run: flutter build apk --release
+      #       - run: flutter pub run build_runner build --delete-conflicting-outputs
+      - run: fvm flutter build apk --release
       - store_artifacts:
           path: build/app/outputs/flutter-apk/app-release.apk

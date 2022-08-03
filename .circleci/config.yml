@@ -8,7 +8,9 @@ jobs:
     steps:
       - checkout 
       - run: flutter doctor
-      - run: flutter test
+#       - run: flutter test
+      - run: flutter packages get
+#       - run: flutter pub run build_runner build --delete-conflicting-outputs
       - run: flutter build apk --release
       - store_artifacts:
           path: build/app/outputs/flutter-apk/app-release.apk
